@@ -64,7 +64,12 @@ UX‑Audits werden **ergebnisoffen** durchgeführt. Es werden nur belegbare Beob
 1. **Emotionales Design & Bildwelt** – Ansprechende Visuals.2. **Interaktive Elemente / Videos / Grafiken** – Interaktionen lockern den Content auf.3. **Keine langen Textblöcke** – Inhalte sind angenehm lesbar.4. **Direkte Ansprache, aktive Sprache** – Nutzende werden persönlich adressiert.5. **Bezug zu Gefühlen der User** – Inhalte sprechen Emotionen an.  
   
 ## **6 · Praktischer Ablauf im Audit**  
-1. Screenshots oder Live‑Seiten werden viewport‑basiert analysiert.2. Für jede relevante Kategorie werden Beobachtungen eingetragen.3. Zu jeder Evidence wird ein kurzes Kommentar‑Template verwendet.4. Scores werden je Kriterium gesetzt (0–3).5. Die Engine berechnet den gewichteten Gesamtscore und eine Top‑3‑Liste kritischer Findings.6. Nach Abschluss der Bewertung erzeugt die Engine **automatisch Handlungsempfehlungen** (Abschnitt 6a).  
+1. Screenshots oder Live‑Seiten werden viewport‑basiert analysiert.
+2. Für jede relevante Kategorie werden Beobachtungen eingetragen.
+3. Zu jeder Evidence wird ein kurzes Kommentar‑Template verwendet.
+4. Scores werden je Kriterium gesetzt (0–3).
+5. Die Engine berechnet den gewichteten Gesamtscore und eine Top‑3‑Liste kritischer Findings.
+6. Nach Abschluss der Bewertung erzeugt die Engine **automatisch Handlungsempfehlungen** (Abschnitt 6a).  
   
 ## **6a · Handlungsempfehlungen & Ticketing (Action Synthesis)**  
 ## **Ziel**  
