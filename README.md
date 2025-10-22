@@ -99,7 +99,7 @@ UX‑Audits werden **ergebnisoffen** durchgeführt. Es werden nur belegbare Beob
 
 6. Nach Abschluss der Bewertung erzeugt die Engine **automatisch Handlungsempfehlungen** (Abschnitt 6a).  
   
-## **6a · Handlungsempfehlungen & Ticketing (Action Synthesis)**  
+## **6a · Handlungsempfehlungen & Ticketing**  
 ## **Ziel**  
 Aus Findings werden klare, umsetzbare Tasks mit Priorität, Akzeptanzkriterien und Owner abgeleitet. Ergebnisse können automatisiert in Tools wie Jira, Asana, Figma‑Kommentare oder Slack‑Feeds übertragen werden.  
 ## **Priorisierungsformel**  
