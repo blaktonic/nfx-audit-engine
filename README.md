@@ -47,28 +47,56 @@ UX‑Audits werden **ergebnisoffen** durchgeführt. Es werden nur belegbare Beob
   
 ## **5 · Kategorien & Kriterien**  
 ## 🟩** Verständlichkeit (1.5)**  
-1. **Einfache, klare Sprache** – Vermeide Fachjargon und doppeldeutige Formulierungen.2. **Vollständigkeit & Informationshierarchie** – Alle relevanten Informationen sind vorhanden und logisch strukturiert.3. **Konsistente Begriffe / Fachbegriffe erklärt** – Einheitliche Terminologie; Abkürzungen sind erläutert.4. **Headlines fassen Inhalte zusammen** – Überschriften sind aussagekräftig und informieren über den Inhalt.  
+1. **Einfache, klare Sprache** – Vermeide Fachjargon und doppeldeutige Formulierungen.  2. **Vollständigkeit & Informationshierarchie** – Alle relevanten Informationen sind vorhanden und logisch strukturiert.  3. **Konsistente Begriffe / Fachbegriffe erklärt** – Einheitliche Terminologie; Abkürzungen sind erläutert.  
+4. **Headlines fassen Inhalte zusammen** – Überschriften sind aussagekräftig und informieren über den Inhalt.  
 ## 🟦** Einfachheit (1.5)**  
-1. **Interaktionselemente wie gewohnt nutzbar** – Buttons, Links und Formulare funktionieren erwartungsgemäß.2. **Essentielle Inhalte & Features vorhanden** – Wichtige Funktionen sind sichtbar; First‑Screen enthält die Primärfunktion.3. **Klare Handlungsanweisungen** – CTAs sind verständlich formuliert; Hilfstexte unterstützen die Nutzer.4. **Kurze Sätze / keine Füllwörter** – Informationen sind auf das Wesentliche reduziert.  
+1. **Interaktionselemente wie gewohnt nutzbar** – Buttons, Links und Formulare funktionieren erwartungsgemäß.  
+2. **Essentielle Inhalte & Features vorhanden** – Wichtige Funktionen sind sichtbar; First‑Screen enthält die Primärfunktion. 3. **Klare Handlungsanweisungen** – CTAs sind verständlich formuliert; Hilfstexte unterstützen die Nutzer.  
+4. **Kurze Sätze / keine Füllwörter** – Informationen sind auf das Wesentliche reduziert.  
 ## 🟧** Navigation (1.5)**  
-1. **Wichtige Inhalte schnell auffindbar** – Wenige Klicks; Filter / Suche bei Bedarf.2. **Klare Headline‑Struktur** – Logische H‑Hierarchie.3. **Eindeutige Navigation** – Menüs sind konsistent und verständlich.4. **Zielerreichung mit minimalen Schritten** – Keine unnötigen Pflichtfelder.5. **Visuelle Struktur mit Abständen & Absätzen** – Keine „Textwände“; ausreichend Weißraum.  
+1. **Wichtige Inhalte schnell auffindbar** – Wenige Klicks; Filter / Suche bei Bedarf.  
+2. **Klare Headline‑Struktur** – Logische H‑Hierarchie.  
+3. **Eindeutige Navigation** – Menüs sind konsistent und verständlich.  
+4. **Zielerreichung mit minimalen Schritten** – Keine unnötigen Pflichtfelder.  
+5. **Visuelle Struktur mit Abständen & Absätzen** – Keine „Textwände“; ausreichend Weißraum.  
 ## 🟥** Zielfokus (1.5)**  
-1. **Primäres Ziel klar sichtbar** – CTA above‑the‑fold; keine ablenkenden Nebenaktionen.2. **Call‑to‑Actions deutlich formuliert** – Eindeutige Labels, kein Wettbewerb zwischen CTAs.3. **Wichtige Inhalte am Anfang** – Nutzenargumente früh platzieren.4. **UX Laws nutzen** (Framing, Isolation, Trust) – Vertrauenssignale integrieren.5. **Ladezeiten beachten** – Vermeide große Assets; gestalte den First Fold performant.  
+1. **Primäres Ziel klar sichtbar** – CTA above‑the‑fold; keine ablenkenden Nebenaktionen.  
+2. **Call‑to‑Actions deutlich formuliert** – Eindeutige Labels, kein Wettbewerb zwischen CTAs.  
+3. **Wichtige Inhalte am Anfang** – Nutzenargumente früh platzieren.  
+4. **UX Laws nutzen** (Framing, Isolation, Trust) – Vertrauenssignale integrieren.  
+5. **Ladezeiten beachten** – Vermeide große Assets; gestalte den First Fold performant.  
 ## 🟨** Responsiveness (1.0)**  
-1. **Textlänge dem Device anpassen** – Kurze Absätze; optimale Zeilenlänge.2. **Native Device‑Features nutzen** – Autofill, native Input‑Picker.3. **Darstellung mobil klar erkennbar** – Keine Überlappungen; kein horizontales Scrollen.  
+1. **Textlänge dem Device anpassen** – Kurze Absätze; optimale Zeilenlänge.  
+2. **Native Device‑Features nutzen** – Autofill, native Input‑Picker.  
+3. **Darstellung mobil klar erkennbar** – Keine Überlappungen; kein horizontales Scrollen.  
 ## 🟪** Wiedererkennung (1.0)**  
-1. **Klarer Absender sichtbar** – Absender sofort erkennbar.2. **Konsistenter Look & Bildwelt** – Einheitliche Gestaltung.3. **Markenidentität spürbar** – Purpose & Werte erkennbar.4. **Glaubwürdige Infos, keine Übertreibungen** – Authentizität.5. **Differenzierung zum Wettbewerb** – Unique Selling Points.  
+1. **Klarer Absender sichtbar** – Absender sofort erkennbar.  
+2. **Konsistenter Look & Bildwelt** – Einheitliche Gestaltung.  
+3. **Markenidentität spürbar** – Purpose & Werte erkennbar.  
+4. **Glaubwürdige Infos, keine Übertreibungen** – Authentizität.  
+5. **Differenzierung zum Wettbewerb** – Unique Selling Points.  
 ## 🟫** Relevanz (1.0)**  
-1. **Zielgruppen‑spezifischer Content** – Inhalte passen zur Zielgruppe.2. **USPs klar kommuniziert** – Mehrwert wird deutlich.3. **Essenzielle Features integriert** – Funktionen entsprechen den Erwartungen.  
+1. **Zielgruppen‑spezifischer Content** – Inhalte passen zur Zielgruppe.  
+2. **USPs klar kommuniziert** – Mehrwert wird deutlich.  
+3. **Essenzielle Features integriert** – Funktionen entsprechen den Erwartungen.  
 ## 🟧** Unterhaltungswert (0.5)**  
-1. **Emotionales Design & Bildwelt** – Ansprechende Visuals.2. **Interaktive Elemente / Videos / Grafiken** – Interaktionen lockern den Content auf.3. **Keine langen Textblöcke** – Inhalte sind angenehm lesbar.4. **Direkte Ansprache, aktive Sprache** – Nutzende werden persönlich adressiert.5. **Bezug zu Gefühlen der User** – Inhalte sprechen Emotionen an.  
+1. **Emotionales Design & Bildwelt** – Ansprechende Visuals.  
+2. **Interaktive Elemente / Videos / Grafiken** – Interaktionen lockern den Content auf.  
+3. **Keine langen Textblöcke** – Inhalte sind angenehm lesbar.  
+4. **Direkte Ansprache, aktive Sprache** – Nutzende werden persönlich adressiert.  
+5. **Bezug zu Gefühlen der User** – Inhalte sprechen Emotionen an.  
   
 ## **6 · Praktischer Ablauf im Audit**  
-1. Screenshots oder Live‑Seiten werden viewport‑basiert analysiert.
-2. Für jede relevante Kategorie werden Beobachtungen eingetragen.
-3. Zu jeder Evidence wird ein kurzes Kommentar‑Template verwendet.
-4. Scores werden je Kriterium gesetzt (0–3).
-5. Die Engine berechnet den gewichteten Gesamtscore und eine Top‑3‑Liste kritischer Findings.
+1. Screenshots oder Live‑Seiten werden viewport‑basiert analysiert.  
+
+2. Für jede relevante Kategorie werden Beobachtungen eingetragen.  
+
+3. Zu jeder Evidence wird ein kurzes Kommentar‑Template verwendet.  
+
+4. Scores werden je Kriterium gesetzt (0–3).  
+
+5. Die Engine berechnet den gewichteten Gesamtscore und eine Top‑3‑Liste kritischer Findings.  
+
 6. Nach Abschluss der Bewertung erzeugt die Engine **automatisch Handlungsempfehlungen** (Abschnitt 6a).  
   
 ## **6a · Handlungsempfehlungen & Ticketing (Action Synthesis)**  
