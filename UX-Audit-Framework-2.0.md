@@ -1,343 +1,176 @@
-**Ziel:** Ein autonomer Agent führt einen UX-Audit durch – ohne Scoring. Stattdessen Status + Priorität + Evidenz + konkrete Empfehlung.  
-**Hinweis:** Themen der **Barrierefreiheit** und **technischen Performance** (z. B. Pagespeed) sind **nicht** Teil des Kern-Audits und als **Zusatz-Module** separat anbaubar (siehe „Module (optional)“).
+# **UX-Audit-Framework-Optimiert.md**
+
+Dieses Dokument beschreibt ein vollständig operationalisierbares Framework, mit dem ein autonomer Agent einen UX-Audit durchführen kann.  
+Es basiert auf den heuristischen Kategorien (**Don’t make me think**, **Guide me** und **Create emotional impact**) und branchenspezifischen Best Practices.  
+Das Framework wurde angepasst, um ohne numerisches Scoring auszukommen und stattdessen qualitative Befunde mit **Status**, **Priorität** und **Evidenz** zu erfassen.  
+Themen wie **Barrierefreiheit** und **technische Performance** sind ausgelagert und werden als optionale Zusatzmodule geführt.
 
 ---
 
-## 0) Briefing-Intro (vor dem Audit abfragen)
-**Kurzabfrage (Pflicht):**
-- **Branche/Industrie:** (z. B. Energie, Bank, SaaS, E-Commerce, Bildung, NGO, Medien)
-- **Produkt/Service-Art:** (Sparprodukt, Tarif, Versicherung, Subscription, physisches Produkt …)
-- **Seitentyp/Kategorie:** (eine oder mehrere)
-  - Corporate / Unternehmensseite
-  - **Landing Page** (Kampagne/Lead-Gen)
-  - **Online-Shop / E-Commerce**
-  - **Produkt-/SaaS-Seite**
-  - **Service-/Kundenportal**
-  - **Blog / Magazin / News**
-  - **Wissensbasis / Doku / Hilfe**
-  - **Portfolio / Case-Studies**
-  - **One-Pager / Microsite**
-  - **Community / Forum / Events**
-- **Primäre Ziele (max. 3):** (Lead, Kauf, Termin, Kontakt, Download …)
-- **Sekundäre Ziele:** …
-- **Zielgruppen/Segmente:** …
-- **Markenwerte/Brand-Ton:** (optional Brand-Guide)
-- **KPIs (falls vorhanden):** (CR, CTR Hero-CTA, Sign-ups, Bounce …)
+## **0 – Briefing-Intro (vor Auditbeginn)**
 
-> Wenn kein Seitentyp angegeben ist, aus Struktur + Features ableiten und dokumentieren („Annahme: …“).
+Vor Beginn fragt der Agent folgende Informationen ab, um Kontext und Zielrahmen zu definieren:
+
+| Kategorie | Beschreibung / Beispiel |
+| :--- | :--- |
+| **Branche / Industrie** | Energie, Bank, SaaS, E-Commerce, Bildung, NGO, Medien … |
+| **Produkt / Service-Art** | Stromtarif, Versicherung, Subscription, physisches Produkt … |
+| **Seitentyp / Kategorie** | Corporate Site / Landing Page / Shop / SaaS-Seite / Kundenportal / Blog / Hilfe / Portfolio / Microsite / Community |
+| **Primäre Ziele (max 3)** | Lead / Kauf / Kontakt / Termin / Download |
+| **Sekundäre Ziele** | … |
+| **Zielgruppen / Segmente** | … |
+| **Markenwerte / Ton** | optionale Brand-Guide-Angabe |
+| **KPIs (falls vorhanden)** | CR, CTR, Sign-ups, Bounce … |
+
+> Wenn kein Seitentyp genannt ist, leitet der Agent ihn aus Struktur und Funktion ab und notiert die Annahme im Report.
 
 ---
 
-## Audit-Philosophie
-- **Don’t make me think:** Inhalte einfach, klar, ohne Hürden.
-- **Guide me:** Sichtbare Zielhandlung, klare Struktur & Navigation.
-- **Create emotional impact:** Stimmige Marke, glaubwürdige Signale, aktivierende Gestaltung.
+## **Audit-Philosophie**
+
+* **Don’t make me think** – Inhalte sollen leicht verständlich sein.  
+  Nutzer:innen dürfen im Flow nicht ins Stocken geraten, weil Strukturen oder Begriffe ungewohnt sind.  
+* **Guide me** – Die Seite muss Zielhandlungen klar kommunizieren, durch Struktur und Navigation leiten und entscheidungsrelevante Informationen priorisieren.  
+* **Create emotional impact** – Markenidentität, Vertrauen und Gestaltung erzeugen Emotion und Glaubwürdigkeit.  
 
 ---
 
-## Evidenz- und Befundformat (ohne Scores)
-Jedes Kriterium wird so dokumentiert:
+## **Evidenz- und Befundschema (ohne Scores)**
 
-- **Status:** ✅ Erfüllt / ⚠️ Teilweise / ❌ Nicht erfüllt  
-- **Priorität:** High / Medium / Low *(Impact × Aufwand, pragmatisch)*
-- **Evidenz (Code):** Relevante DOM-Selektoren, Attribute, Textstellen
-- **Evidenz (Visuell):** Screenshot-Ausschnitt (+ Viewport/Koordinaten)
-- **Empfehlung (3-teilig, verpflichtend):**
-  - **Handlung (Was)** – kurze Direktive
-  - **Begründung (Warum)** – Heuristik/UX-Law/Prinzip
-  - **Technische Anweisung (Wie)** – selektorbasierter Vorschlag (CSS/HTML/JS)
+Jedes Kriterium wird mit folgender Struktur bewertet:
 
----
-
-## Kategorien & Kriterien (Kern-Audit)
-
-### 1) Einfachheit (Simplicity)
-**E1 – Konsistenz der Interaktionselemente (Jakob’s Law)**  
-- **Code:** Buttons sind `<button>` oder `<a>` (kein `div[onclick]`), konsistente Komponentenklassen  
-- **Visuell:** einheitliche Button-Gestalt (Farbe, Größe, Radius, States)
-
-**E2 – Essentielle Inhalte & Funktionen vorhanden (seitentypabhängig)**  
-- **Code:** erwartete Schlüsselelemente vorhanden (z. B. Produktinfo, Kontakt, Pricing; Formulare mit `required` wo nötig)  
-- **Visuell:** erwartete Bereiche sichtbar & zugänglich
-
-**E3 – Eindeutige Zielhandlungsanweisung (CTA-Klarheit)**  
-- **Code:** CTA-Texte mit Handlungsverb, keine mehrdeutigen Labels  
-- **Visuell:** CTA prominent, klar abgegrenzt, ausreichend Abstand
-
-**E4 – Redundanzen & Füllwörter vermeiden**  
-- **Code:** Textanalyse auf sehr lange Sätze (> 20 Wörter) & Füllwörter  
-- **Visuell:** sinnvolles Chunking, Weißraum, Scanbarkeit
-
-**E5 – Gesprochene Sprache & aktivierende Fragen**  
-- **Code:** 2. Person, Fragen vorhanden, wenig Passiv/Nominalstil  
-- **Visuell:** kurze, direkte Botschaften sichtbar hervorgehoben
+| Feld | Beschreibung |
+| :--- | :--- |
+| **Status** | ✅ Erfüllt   /  ⚠️ Teilweise   /  ❌ Nicht erfüllt |
+| **Priorität** | High / Medium / Low  (Impact × Aufwand) |
+| **Evidenz (Code)** | Relevante DOM-Selektoren, Attribute, Texte |
+| **Evidenz (Visuell)** | Screenshot-Ausschnitt (+ Viewport-Angabe) |
+| **Empfehlung (3-teilig)** | **Was** – Handlung   • **Warum** – Prinzip / Heuristik   • **Wie** – technischer Vorschlag (CSS/HTML/JS) |
 
 ---
 
-### 2) Verständlichkeit (Clarity)
-**V1 – Einfache Sprache, Jargon erklärt**  
-- **Code:** Fachbegriffe/Abkürzungen erkenntlich; Erklärflächen/Glossar vorhanden  
-- **Visuell:** kontextsensitive Erklärungen/Infoboxen
+## **Kategorien & Kriterien**
 
-**V2 – Vollständigkeit der Informationen**  
-- **Code:** Pflichtangaben vorhanden (z. B. Preis, Konditionen), Formulare liefern Fehlermeldungen  
-- **Visuell:** keine Informationslücken in Kernbereichen
-
-**V3 – Klare Informationshierarchie**  
-- **Code:** sinnvolle `<h1…h6>`-Abfolge, semantische Gruppierung  
-- **Visuell:** typografische Hierarchie, Abstände, Raster
-
-**V4 – Konsistente Benennungen**  
-- **Code:** gleiche Funktionen gleich benannt („Login“ vs. „Anmeldung“ vermeiden)  
-- **Visuell:** Labels, Menüs, Buttons konsistent
-
-**V5 – Aussagekräftige Headlines**  
-- **Code:** H1–H3 enthalten Schlüsselbegriffe (keine Placeholder)  
-- **Visuell:** Headlines visuell dominant und inhaltlich klar
+Die Kategorien folgen den Heuristiken und beinhalten nur UX-relevante Aspekte.  
+Barrierefreiheit und technische Leistung sind bewusst nicht enthalten (siehe Module A & B).
 
 ---
 
-### 3) Responsiveness (Responsivität)
-**R1 – Angepasste Informationstiefe**  
-- **Code:** Textlänge pro Viewport; Absätze > 3 Bildschirmhöhen flaggen  
-- **Visuell:** Scrolltiefe vs. Informationsdichte im ersten Screen
+### **Kategorie 1 – Einfachheit (Simplicity)**
 
-**R2 – Nutzung nativer Gerätefunktionen**  
-- **Code:** Standard-Elemente (z. B. `<select>`) oder sauber implementierte Custom-UIs  
-- **Visuell:** erwartetes Verhalten/Look für Standard-Controls
-
-**R3 – Lesbarkeit auf kleinen Geräten**  
-- **Code:** Media-Queries, fluid Layouts, mobile Fonts ≥ 16px  
-- **Visuell:** Zeilenlänge ~45–70 Zeichen, ausreichender Kontrast
-
-> **Hinweis:** Ladezeit/Pagespeed ist **nicht** Teil des Kern-Audits; siehe Modul „Technische Performance“.
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| E1 | Konsistenz der Interaktionselemente (**Jakob’s Law**) | Buttons sind `<button>` oder `<a role="button">`; keine `<div onclick>`; einheitliche Komponentenklassen | Buttons sehen überall gleich aus (Farbe, Radius, States) |
+| E2 | Essentielle Inhalte & Funktionen vorhanden | Schlüsselelemente im DOM (z. B. Produktinfo, Kontakt, Pricing); Formularfelder mit `required` | Erwartete Bereiche sichtbar und leicht zugänglich |
+| E3 | Eindeutige Zielhandlungsanweisung | CTA-Texte mit Verben und sinnvollen `aria-labels` | CTA prominent, kontrastreich, gut abgesetzt |
+| E4 | Redundanzen & Füllwörter vermeiden | Textanalyse auf > 20 Wörter und Füllwörter | Kurze Absätze, Weißraum, guter Lesefluss |
+| E5 | Gesprochene Sprache / aktivierende Fragen | 2. Person, Frageformen, wenig Passiv | Kurze direkte Texte sichtbar hervorgehoben |
 
 ---
 
-### 4) Navigation
-**N1 – Einfache Antrag/Checkout-Strecke**  
-- **Code:** logische Gruppierung, Schrittindikatoren, Interaktions-Feedback  
-- **Visuell:** Feldanzahl/-länge angemessen, Progress erkennbar
+### **Kategorie 2 – Verständlichkeit (Clarity)**
 
-**N2 – Auffindbarkeit wichtiger Inhalte**  
-- **Code:** `<nav>`, interne Verlinkungen, Breadcrumbs  
-- **Visuell:** Suche, Menü, Filter klar sichtbar
-
-**N3 – Klare Heading-Struktur**  
-- **Code:** keine Heading-Sprünge  
-- **Visuell:** visuelle Hierarchie spiegelt Semantik
-
-**N4 – Navigation & Seitenstruktur (Hick’s/Miller’s Law)**  
-- **Code:** Hauptnavigation ≈ ≤ 7 ± 2 Punkte  
-- **Visuell:** Orientierungspunkte (Header, Footer, Breadcrumbs) eindeutig
-
-**N5 – Visuelle Strukturierung**  
-- **Code:** definierte Heading-Styles in CSS  
-- **Visuell:** Abstände, Alignment, konsistentes Grid
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| V1 | Einfache Sprache, Jargon erklärt | Fachbegriffe markiert (`abbr` oder Glossar) | Erklärungen neben Text oder via Tooltip |
+| V2 | Vollständigkeit der Informationen | Pflichtfelder, Fehlermeldungen, FAQ-Bereiche | Preise, Leistungen, Beschreibungen vorhanden |
+| V3 | Klare Informationshierarchie | Korrekte `<h1>`–`<h6>` Reihenfolge | Abstände, Typografie, Raster klar erkennbar |
+| V4 | Konsistente Benennungen | gleiche Funktion = gleicher Begriff | Labels / Menüs / Buttons einheitlich |
+| V5 | Aussagekräftige Headlines | H1–H3 mit Schlüsselbegriffen | Headlines optisch dominant, prägnant |
 
 ---
 
-### 5) Zielfokus (Goal Focus)
-**Z1 – Primäres Ziel klar abgrenzbar (Isolation Effect)**  
-- **Code:** genau ein primärer CTA (keine Konkurrenz durch gleichgewichtete Sekundär-CTAs)  
-- **Visuell:** klare farbliche/größenmäßige Abhebung
+### **Kategorie 3 – Responsiveness (Responsivität)**
 
-**Z2 – Call-to-Action-Texte (Handlungsverben)**  
-- **Code:** prägnante Verben, klare Semantik  
-- **Visuell:** kurz (< 4 Wörter), kontextstark
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| R1 | Angepasste Informationstiefe | Absätze > 3 Screens flaggen | Scrolltiefe vs. Informationsdichte |
+| R2 | Nutzung nativer Gerätefunktionen | Standard-Inputs (`select`, `date`) oder saubere ARIA-Customs | Erwartetes Look & Feel des Systems |
+| R3 | Lesbarkeit auf kleinen Geräten | Media-Queries, Fonts ≥ 16 px | Zeilenlänge 45–70 Zeichen, Kontrast OK |
 
-**Z3 – Platzierung wichtiger Inhalte (Above-the-Fold)**  
-- **Code:** Kernbotschaft + CTA im ersten Screen (~600–700 px)  
-- **Visuell:** USP + Haupt-CTA sofort sichtbar
-
-**Z4 – Biases & UX-Laws (Framing, Social Proof, Trust)**  
-- **Code:** Preisanker, Testimonials, Trust-Signale, Verknappungs-Hinweise  
-- **Visuell:** Hervorhebung ohne Ablenkung
+> *Performance-Metriken (LCP u. a.) sind nicht Teil dieser Kategorie – siehe Modul B.*
 
 ---
 
-### 6) Wiedererkennung (Recognition)
-**W1 – Klarer Absender/Branding**  
-- **Code:** Logo im Header, sinnvoller `<title>` und `meta description`  
-- **Visuell:** Markenlogo/Name prominent ohne Konkurrenz
+### **Kategorie 4 – Navigation**
 
-**W2 – Konsistente Gestaltung**  
-- **Code:** wiederkehrende Variablen/Klassen für Farben, Spacing, Komponenten  
-- **Visuell:** kohärente Bildwelt, Icons, Farbpalette
-
-**W3 – Markenidentität spürbar**  
-- **Code:** Mission/Values/Proof-Points im DOM  
-- **Visuell:** Bildsprache & Ton treffen Marke und Branche
-
-**W4 – Glaubwürdigkeit & Versprechen**  
-- **Code:** Buzzword-Dichte niedrig, Abgleich mit Impressum/AGB  
-- **Visuell:** plausible Testimonials/Zertifikate
-
-**W5 – Abgrenzung zur Konkurrenz**  
-- **Code:** (optional) Text-Ähnlichkeitscheck  
-- **Visuell:** eigenständige Motive statt generischer Stock
-
-**W6 – Brand-Guide-Konformität**  
-- **Code:** Terminologie-Abgleich ggü. bereitgestelltem Guide  
-- **Visuell:** orthografische Konsistenz, Schreibweisen
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| N1 | Einfache Antrags- / Checkout-Strecke | Formulare logisch gruppiert, Feedback vorhanden | Feldanzahl / Progress angemessen |
+| N2 | Auffindbarkeit wichtiger Inhalte | `<nav>`, interne Links, Breadcrumbs | Suche, Menü, Filter klar sichtbar |
+| N3 | Klare Heading-Struktur | keine Heading-Sprünge | Visuelle Hierarchie entspricht Semantik |
+| N4 | Navigation & Seitenstruktur (**Miller’s Law**) | ≤ 7 ± 2 Hauptpunkte | Header, Footer, Breadcrumbs eindeutig |
+| N5 | Visuelle Strukturierung | Heading-Styles in CSS definiert | Abstände, Alignment, 8-px-Grid konsistent |
+| N6 | Fehlervermeidung & Hilfe (**Heuristik 5 & 9**) | `input:invalid`, `required`, Inline-Hilfen | Fehlertexte direkt am Feld, Pflichtmarkierung |
 
 ---
 
-### 7) Relevanz
-**Rlv1 – Essenzielle Inhalte & Features**  
-- **Code:** USPs/Features/Kontakt vorhanden  
-- **Visuell:** USP, Preis, Vorteile sichtbar priorisiert
+### **Kategorie 5 – Zielfokus (Goal Focus)**
 
-**Rlv2 – Zielgruppen-spezifischer Content**  
-- **Code:** Segmentierung/Personalisierung (falls vorgesehen)  
-- **Visuell:** Bildwelt & Beispiele passen zur Zielgruppe
-
-**Rlv3 – Präsentation der USPs**  
-- **Code:** Abschnitte „Vorteile/Warum wir“ strukturiert  
-- **Visuell:** Icons/Listen/Hervorhebungen
-
-**Rlv4 – Aktualität der Inhalte**  
-- **Code:** Datumsangaben/Versionen vorhanden  
-- **Visuell:** zeitgemäße Referenzen & Assets
-
-**Rlv5 – Relevante Suchbegriffe (leichtgewichtig, on-page)**  
-- **Code:** `<title>`, `meta description`, `<h1>` keyword-stimmig  
-- **Visuell:** zentrale Begriffe im sichtbaren Text
-
-**Rlv6 – Nutzerprobleme antizipieren**  
-- **Code:** FAQs/Help/Erklärflächen vorhanden  
-- **Visuell:** heikle Themen (Lieferzeit, Kosten) proaktiv adressiert
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| Z1 | Primäres Ziel klar abgrenzbar (**Isolation Effect**) | ein primärer CTA, keine gleichwertigen Sekundär-CTAs | Farb-/Größenabhebung klar erkennbar |
+| Z2 | Call-to-Action-Texte | Handlungsverben, prägnant | kurz (< 4 Wörter), kontextstark |
+| Z3 | Platzierung wichtiger Inhalte (**Above-the-Fold**) | Kernbotschaft + CTA im ersten Screen | USP + CTA sofort sichtbar |
+| Z4 | Biases & UX-Laws (Framing, Social Proof, Trust) | Preissignale, Testimonials, Badges | prominent, nicht aufdringlich |
 
 ---
 
-## Ablauf (Agenten-Operative)
-1. **Framework laden** → Briefing-Intro abfragen/validieren  
-2. **URL öffnen** → Viewports: Mobile (360×640), Tablet (768×1024), Desktop (1440×900)  
-3. **Screenshots** je Viewport: Above-the-Fold + Full-page (scrollend), Pfade speichern  
-4. **DOM-Dump**: HTML + verbundene CSS/JS (für Evidenz, keine Performance-Bewertung)  
-5. **Kriterienprüfung** Kategorie → Kriterium:  
-   - Status, Priorität, Evidenz (Code/Visuell)  
-   - Empfehlung (Was/Warum/Wie) – **immer selektorbasiert**  
-6. **Quick Wins** identifizieren (hoher Impact, niedriger Aufwand)  
-7. **Bericht erzeugen** (Template unten) + optional JSON-Artefakt (Issues)
+### **Kategorie 6 – Wiedererkennung (Recognition)**
+
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| W1 | Klarer Absender / Branding | Logo im `<header>`, `<title>`, `meta description` | Marke sofort erkennbar |
+| W2 | Konsistente Gestaltung | CSS-Variablen / Klassen wiederkehrend | Bild- und Farbwelt kohärent |
+| W3 | Markenidentität spürbar | Mission / Values im DOM | Bildsprache & Ton entsprechen Marke |
+| W4 | Glaubwürdigkeit & Versprechen | Buzzwords vermeiden, Abgleich AGB | Testimonials / Zertifikate plausibel |
+| W5 | Abgrenzung zur Konkurrenz | optional Text-Similarity-Check | eigene Bilder statt Stock |
+| W6 | Brand-Guide-Konformität | Terminologie-Abgleich mit Guide | Orthografie, Schreibweisen einheitlich |
 
 ---
 
-## Bericht-Template (ohne Scores)
-# UX-Audit für `<Hostname>` (`<Datum>`)
+### **Kategorie 7 – Relevanz**
 
-## Executive Summary
-- **Primäres Ziel:** `<…>`  
-- **Hauptbefunde (3–5):** `<…>`  
-- **Top-3 Quick Wins:** `<…>`  
-- **Risiken/Trade-offs:** `<…>`  
-- **Nächste Schritte:** `<…>`
-
-## Befundübersicht
-| Kategorie | Kriterium | Status | Priorität | Kurzbefund |
-|---|---|---:|---:|---|
-| Einfachheit | E1 – Konsistenz der Interaktionselemente | ⚠️ | High | `<1-Satz-Befund>` |
-| … | … | … | … | … |
-
-## Detailanalyse
-### `<Kategorie>`
-#### `<Kriterium-ID – Kurzbeschreibung>`
-- **Status:** ✅ / ⚠️ / ❌  
-- **Priorität:** High / Medium / Low  
-- **Evidenz (Code):** ```html
-<relevanter DOM-Ausschnitt oder Selektor>
-Evidenz (Visuell): screens/desktop_hero.png#bbox(120,320,540,420)
-
-Empfehlung (3-teilig):
-
-Was: <Direktive>
-
-Warum: <Heuristik/UX-Law>
-
-Wie: ```css
-.hero-cta { background: var(--brand-primary); }
-.btn.secondary { opacity: .75; }
-
-python
-Code kopieren
-
-## Quick Wins
-- `[High/Low Aufwand] <Maßnahme>` – **Nutzen:** `<Impact>` – **Wie:** `<Selektor/Change>`
-
-## Anhang
-- **Screenshots:** je Viewport (nummeriert)  
-- **DOM-Artefakte:** Exportpfade/Hashes  
-- **(Optional) Brand-Guide-Abgleich:** Stichpunkte
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| Rlv1 | Essenzielle Inhalte & Features | USPs / Kontakt vorhanden | USP, Preis, Vorteile sichtbar |
+| Rlv2 | Zielgruppen-spezifischer Content | Segmentierung / Personalisierung | Bildwelt & Beispiele passen |
+| Rlv3 | Präsentation der USPs | Abschnitt „Warum wir“ o. Ä. | Icons / Listen / Hervorhebung |
+| Rlv4 | Aktualität der Inhalte | Datumsangaben / Versionen | Texte / Bilder zeitgemäß |
+| Rlv5 | Relevante Suchbegriffe (SEO light) | `<title>`, `meta description>`, `<h1>` | Keywords sichtbar im Text |
+| Rlv6 | Nutzerprobleme antizipieren | FAQ / Help / Live-Chat vorhanden | kritische Fragen vorweggenommen |
 
 ---
 
-## JSON-Artefakt (optional)
-Jedes Issue als Objekt mit:  
-`id, category, criterion, status, priority, evidence.code[], evidence.visual, recommendation.{what,why,how}`
+### **Kategorie 8 – Unterhaltungswert (Engagement)**
 
-**Beispiel:**
-```json
-{
-  "id": "Z1-001",
-  "category": "Goal Focus",
-  "criterion": "Z1 – Primäres Ziel klar abgrenzbar",
-  "status": "partial",
-  "priority": "high",
-  "evidence": {
-    "code": [".btn.primary", ".btn.secondary.is-equal-weight"]
-  },
-  "evidence_visual": {
-    "screenshot": "screens/desktop_hero.png",
-    "bbox": [120, 320, 540, 420]
-  },
-  "recommendation": {
-    "what": "Sekundär-CTA deeskalieren, Primär-CTA isolieren",
-    "why": "Isolation Effect, Hick’s Law",
-    "how": ".btn.secondary{opacity:.7;border-color:var(--neutral-300)}; .btn.primary{background:var(--brand-primary)}"
-  }
-}
-Mini-Checklisten nach Seitentyp (Erwartungswerte)
-Landing Page (Lead/Kampagne)
+| ID | Kriterium | Codebasierte Prüfregeln | Visuelle Prüfregeln |
+| :--- | :--- | :--- | :--- |
+| U1 | Emotionale Gestaltung | emotionale Wortfelder, `alt`-Texte | Farb- / Bildwirkung stimmig |
+| U2 | Medienmix | `<video>`, `<audio>`, `<svg>` vorhanden, zugänglich | Medien sinnvoll eingesetzt |
+| U3 | Aktive Sprache | wenig Passiv, Verben prägnant | CTAs / Headlines aktiv |
+| U4 | Emotionale Ansprache | Begriffe wie „Sicherheit“, „Freude“ | Testimonials / Story-Elemente |
+| U5 | Gamification & Feedback | Fortschritt, Punkte, Micro-Interactions | Animationen / Belohnungen vorhanden |
 
-Hero: klarer USP + ein primärer CTA Above-the-Fold
+---
 
-Social Proof im 1. Screen; Formular schlank, nur notwendige Felder
+## **Ablaufplan für den Agenten (ohne Scores)**
 
-Friktion gering (kein unnötiger Ablenkungskram)
+1. **Vorbereitung / Infos holen**  
+   * Framework laden (diese Datei)  
+   * Briefing-Intro ausfüllen (Branche, Ziele usw.)  
+   * Optional: Brand-Guide verknüpfen  
+2. **Seite analysieren**  
+   * URL öffnen (Desktop 1440×900, Tablet 768×1024, Mobile 360×640)  
+   * Screenshots (Above-the-Fold + Full-Page) erstellen  
+   * DOM extrahieren (HTML + CSS + JS)  
+   * Kriterien prüfen – je Kategorie / Kriterium Status + Priorität + Evidenz + Empfehlung  
+3. **Quick Wins identifizieren** – hoher Impact, geringer Aufwand  
+4. **Audit-Bericht erzeugen** (siehe Template) + optional JSON-Export aller Issues  
 
-E-Commerce / PDP
+---
 
-Preis, Variante, Verfügbarkeit sichtbar
+## **Audit-Output-Template**
 
-Primär-CTA „In den Warenkorb“ isoliert
-
-Versand/Retouren vor dem CTA klar
-
-SaaS / Produktseite
-
-Klarer Value Prop + „Free Trial/Demo“
-
-Pricing-Vergleich verständlich, FAQ zu Risiken (Kündigung, Sicherheit)
-
-Onboarding kurz erklärt, Trust-Signale sichtbar
-
-Service-/Kundenportal
-
-Login/Registrierung einfach, Aufgaben-Hub (Top-3 Tasks)
-
-Klarer Status (z. B. Tickets/Rechnungen) – ohne technische Detailmetriken
-
-Module (optional, separat ausführbar – nicht Kern-Audit)
-Modul A – Barrierefreiheit (A11y) – separat dokumentieren
-Ziel: Konformität ggü. WCAG 2.1 AA prüfen (Kontraste, Tastatur-Fokus, Alternativtexte, Rollen, Skip-Links, Fokus-Reihenfolge, Fehlertexte etc.).
-
-Output: eigener A11y-Report mit Checkliste, Beispielen, Code-Patches (keine Vermischung mit UX-Kernbefunden).
-
-Modul B – Technische Performance (Pagespeed)
-Ziel: Messung & Analyse (LCP, CLS, INP, TTFB, TTI, Ressourcen-Budget, Bild-Optimierung, kritisches CSS, Caching, 3rd-Party-Kosten).
-
-Tools: Lighthouse/Performance-API, WebPageTest o. ä.
-
-Output: eigener Performance-Report mit Messpunkten, Bottlenecks, Priorisierung & Tech-Fixes.
-
-Beide Module können bei Bedarf parallel beauftragt werden und in der Executive Summary lediglich verlinkt/kurz erwähnt werden.
+```markdown
+# UX-Audit für <Hostname> (<Datum
