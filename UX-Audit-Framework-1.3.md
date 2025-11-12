@@ -186,7 +186,87 @@ Kurze Zusammenfassung der wichtigsten Erkenntnisse, Scores und Quick Wins.
   
 Stichpunktartige Liste von Maßnahmen mit hohem Impact und geringem Aufwand.  
   
-## Anhang  
+## Anhang
+
+
+
+##**Audit Output json Struktur**
+{
+  "$schema": "[http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)",
+  "title": "UXAuditResult",
+  "type": "object",
+  "properties": {
+    "url": { "type": "string", "format": "uri" },
+    "date": { "type": "string", "format": "date" },
+    "overallScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "criteria": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "description": { "type": "string" },
+                "codeScore": { "type": "number", "minimum": 0, "maximum": 3 },
+                "visualScore": { "type": "number", "minimum": 0, "maximum": 3 },
+                "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+                "evidence": {
+                  "type": "object",
+                  "properties": {
+                    "domPaths": { "type": "array", "items": { "type": "string" } },
+                    "screenshotPaths": { "type": "array", "items": { "type": "string" } },
+                    "notes": { "type": "string" }
+                  },
+                  "required": ["domPaths", "screenshotPaths"]
+                },
+                "recommendation": { "type": "string" },
+                "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+                "effort": { "type": "string", "enum": ["low", "medium", "high"] }
+              },
+              "required": ["id", "codeScore", "visualScore", "weight"]
+            }
+          }
+        },
+        "required": ["id", "name", "score", "criteria"]
+      }
+    },
+    "quickWins": { "type": "array", "items": { "type": "string" } },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterionId": { "type": "string" },
+          "description": { "type": "string" },
+          "evidence": { "$ref": "#/definitions/evidence" },
+          "recommendation": { "type": "string" },
+          "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+          "effort": { "type": "string", "enum": ["low", "medium", "high"] }
+        },
+        "required": ["criterionId", "description", "recommendation"]
+      }
+    }
+  },
+  "definitions": {
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "domPaths": { "type": "array", "items": { "type": "string" } },
+        "screenshotPaths": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      },
+      "required": ["domPaths", "screenshotPaths"]
+    }
+  },
+  "required": ["url", "date", "overallScore", "categories"]
+}
   
 * Screenshots (mobile, tablet, desktop; above‑the‑fold und fullpage)  
 * Core‑Web‑Vital‑Metriken  
