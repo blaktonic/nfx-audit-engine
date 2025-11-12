@@ -190,7 +190,7 @@ Stichpunktartige Liste von Maßnahmen mit hohem Impact und geringem Aufwand.
 
 
 
-##Audit Output json Struktur-Referenz##
+##Audit Output json Struktur-Referenz
 {
   "$schema": "[http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)",
   "title": "UXAuditResult",
