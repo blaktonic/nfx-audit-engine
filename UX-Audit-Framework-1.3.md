@@ -4,7 +4,7 @@ Dieses Dokument beschreibt ein vollständig operationalisierbares Framework, mit
   
 ## **Audit‑Philosophie**  
   
-* **Don’t make me think** – Inhalte sollen einfach und verständlich sein. Nutzer:innen dürfen nicht ins Stocken geraten, weil Interaktionselemente ungewohnt sind oder Informationen fehlen. Verwende einfache Sprache, kurze Sätze und verzichte auf Jargon.  
+* **Don’t make me think** – Inhalte sollen einfach und verständlich sein. Nutzer:innen dürfen im User Flow nicht ins Stocken geraten, weil Interaktionselemente ungewohnt sind oder Informationen fehlen. Verwende einfache Sprache, kurze Sätze und verzichte auf Jargon.  
 * **Guide me** – Die Seite muss Zielhandlungen klar kommunizieren und Nutzer:innen durch Struktur, Hierarchie und Navigation leiten. Wichtige Inhalte sollen schnell auffindbar sein und der Weg zum Abschluss möglichst kurz. Primäre Call‑to‑Actions müssen hervorgehoben werden und sich deutlich von Sekundärelementen abgrenzen.  
 * **Create emotional impact** – Markenidentität, Wiedererkennung und emotionales Design tragen zur Glaubwürdigkeit bei. Eine konsistente Bildsprache, passende Farben und glaubwürdige Informationen fördern Vertrauen. Interaktive Elemente, Multimedia‑Content und Storytelling erhöhen die Relevanz und machen die Nutzung unterhaltsamer.  
   
