@@ -17,8 +17,8 @@ Vor Beginn fragt der Agent folgende Informationen ab, um Kontext und Zielrahmen 
 | **Produkt / Service-Art** | Stromtarif, Versicherung, Subscription, physisches Produkt … |
 | **Seitentyp / Kategorie** | Corporate Site / Landing Page / Shop / SaaS-Seite / Kundenportal / Blog / Hilfe / Portfolio / Microsite / Community |
 | **Customer Journey Phase / Marketing Funnel** | Awareness / Consideration / Purchase Decision / Retargeting / Retention / Advocay |
-| **Primäre Ziele (max 3)** | Lead / Kauf / Kontakt / Termin / Download |
-| **Sekundäre Ziele** | … |
+| **Primär Ziel (max 1)** | Lead / Kauf / Kontakt / Termin / Download |
+| **Sekundäre Ziele (max 2-3) ** | … |
 | **Zielgruppen / Segmente** | … |
 | **Markenwerte / Ton** | optionale Brand-Guide-Angabe |
 | **KPIs (falls vorhanden)** | CR, CTR, Sign-ups, Bounce … |
