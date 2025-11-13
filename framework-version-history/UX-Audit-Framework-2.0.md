@@ -174,4 +174,6 @@ Barrierefreiheit und technische Leistung sind bewusst nicht enthalten (siehe Mod
 ## **Audit-Output-Template**
 
 ```markdown
-# UX-Audit für <Hostname> (<Datum
+# UX-Audit für <Hostname> 
+<Datum>
+<Framework Version>
