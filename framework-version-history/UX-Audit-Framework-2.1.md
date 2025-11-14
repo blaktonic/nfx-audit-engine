@@ -3,7 +3,7 @@ title: "NFX UX-Audit Framework"
 version: "2.1"
 status: "stable"
 last_updated: "2025-11-13"
-author: "Ben Sikasa (NFX) & Noa"
+author: "Ben Sikasa & Severin Landa"
 description: "Ein heuristisches, agentenfähiges Framework zur automatisierten UX-Analyse von Websites."
 tags:
   - UX
